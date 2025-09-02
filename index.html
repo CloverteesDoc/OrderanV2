@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan Clovertees</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="formPemesanan">
+    <h2>📝 Form Pemesanan Clovertees</h2>
+
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" required placeholder="Nama kamu">
+        
+    <label for="telepon">No. WhatsApp:</label>
+    <input type="tel" id="telepon" name="telepon" required placeholder="Contoh: 08123456789" pattern="[0-9]{10,13}">
+    
+    <label for="instagram">Instagram:</label>
+    <input type="text" id="instagram" name="instagram" placeholder="Opsional (isi jika ada)">
+
+    <label for="alamat">Alamat Lengkap:</label>
+    <textarea id="alamat" name="alamat" required placeholder="Wajib diisi / Ambil Di Tempat"></textarea>
+    
+    <div id="warnaContainer"></div>
+    <button type="button" onclick="tambahWarna()">➕ Tambah Produk Lain</button>
+
+    <div class="total-section" id="totalDisplay">Total Pesanan: 0 pcs</div>
+    <div class="total-section" id="rincianHarga">Total Harga: Rp0</div>
+    <div class="total-section" id="totalHargaAkhir">Total Harga:</div>
+
+
+    <div class="note">
+      <strong>📌 Perhatian!</strong><br>
+      Berikut ini syarat & ketentuan untuk belanja di Clovertees : <br><br>
+      1. Setelah submit, warna & ukuran <strong>tidak bisa diubah</strong>.<br>
+      2. Harga diatas belum termasuk Ongkir, Diskon dan tambahan harga <em>( jika ada )</em><br>
+      3. Mohon Informasikan setelah transfer.<br>
+        <em><p style="text-indent: 20px;">*Desain akan diproses sesuai antrian</p></em>
+        <em><p style="text-indent: 20px;">( Yang transfer duluan diproses duluan ) </p></em>
+      4. Proses pembuatan: 4-7 hari setelah approve desain.<br>
+        <em><p style="text-indent: 20px;">NB : tergantung pada qty pesanan</p></em>
+        <em><p style="text-indent: 20px;">( Apabila size dan warna baju ready )</p></em>
+      5. Warna bisa berbeda sedikit tergantung bahan (cotton combed 24s/30s).<br>
+        <em><p style="text-indent: 20px;">(Kids dan dress bahan catton combed 24s dan dewasa catton combed 30s) </p></em>
+        <br>
+      <em>Order = Setuju dengan syarat di atas.</em>
+      
+    </div>
+
+    <!-- Popup Loading Modal -->
+    <div id="loadingMessage" class="modal-loading">
+      <div class="modal-content">
+        <div class="spinner"></div>
+        <p>Mengirim pesanan...</p>
+      </div>
+    </div>
+
+    <!-- Progress Bar Upload 
+    <div class="progress-bar-container" id="globalProgressContainer" style="display: none;">
+      <progress id="globalProgressBar" value="0" max="100"></progress>
+      <span id="globalProgressText">0%</span>
+    </div> -->
+
+    <!-- Tombol Submit -->
+    <button type="submit">🚀 Kirim Pesanan</button>
+  </form>
+  
+  <!-- Modal Notifikasi -->
+    <div id="successModal" class="modal-notif" style="display: none;">
+      <div class="modal-box">
+        <h3>✅ Pesanan Berhasil!</h3>
+        <p id="successText"></p>
+        <button id="btnCloseSuccess">OK</button>
+      </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
